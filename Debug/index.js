@@ -1,18 +1,25 @@
 const main = require("./main");
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
-getData().forEach((item) => {
-  if (main.condition1(item[0])) {
-    console.log("Condition 1");
-  }
-  if (main.condition2(item[1])) {
-    console.log("Condition 2");
-  }
-  if (main.condition3(item[2])) {
-    console.log("Condition 3");
-  }
-  if (main.condition4(item[3])) {
-    console.log("Condition 4");
-  }
+readline.question("Click any key to start", () => {
+  getData().forEach((item) => {
+    if (main.condition1(item[0])) {
+      console.log("Condition 1");
+    }
+    if (main.condition2(item[1])) {
+      console.log("Condition 2");
+    }
+    if (main.condition3(item[2])) {
+      console.log("Condition 3");
+    }
+    if (main.condition4(item[3])) {
+      console.log("Condition 4");
+    }
+  });
+  readline.close();
 });
 
 function getData() {
